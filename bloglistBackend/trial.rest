@@ -1,0 +1,68 @@
+GET http://localhost:3007/api/blogs
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNvbnNvbGVsb3ZlciIsImlkIjoiNjAyYzY4Y2U4ZjI2OGE1NDY0OTRkZmM2IiwiaWF0IjoxNjEzOTkwMDk2fQ.gEiqxO7KwsxxQvOezAnHK4bXljFpnDoAlyHhQwSUmRU
+
+#####
+DELETE   http://localhost:3007/api/blogs/602c15aee9f78e3614d67f25
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdlbmRhcjY3IiwiaWQiOiI2MDJjMGM1NWNiMDk3NTM0M2MzNGNhNGYiLCJpYXQiOjE2MTQxOTQ5MzB9.YB86W3y-MsgVz_0KC8piB7MJcJpzjcLfdVjqs-eDo3s
+
+
+####
+GET http://localhost:3007/api/blogs/60338b1beee6e74cdcdcfd9a
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNvbnNvbGVsb3ZlciIsImlkIjoiNjAyYzY4Y2U4ZjI2OGE1NDY0OTRkZmM2IiwiaWF0IjoxNjEzOTkwMDk2fQ.gEiqxO7KwsxxQvOezAnHK4bXljFpnDoAlyHhQwSUmRU
+
+####
+PUT  http://localhost:3007/api/blogs/60338b1beee6e74cdcdcfd9a
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNvbnNvbGVsb3ZlciIsImlkIjoiNjAyYzY4Y2U4ZjI2OGE1NDY0OTRkZmM2IiwiaWF0IjoxNjEzOTkwMDk2fQ.gEiqxO7KwsxxQvOezAnHK4bXljFpnDoAlyHhQwSUmRU
+
+{
+    "title": "the development surrounding the UNILAG medical induction",
+    "author": "abdulwahab abbas",
+    "url": "www.medicallife.com/7383",
+    "likes": 4
+}
+
+#####
+POST http://localhost:3007/api/users
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNvbnNvbGVsb3ZlciIsImlkIjoiNjAyYzY4Y2U4ZjI2OGE1NDY0OTRkZmM2IiwiaWF0IjoxNjEzOTkwMDk2fQ.gEiqxO7KwsxxQvOezAnHK4bXljFpnDoAlyHhQwSUmRU
+
+{
+    "username": "testingman",
+    "name": "oladimeji soladoye",
+    "password": "humans"
+}
+####
+
+
+POST http://localhost:3007/api/login
+Content-Type: application/json
+
+{
+    "username": "testingman",
+    "password": "humans"
+}
+/*Testing mode */
+####
+POST http://localhost:3007/api/blogs
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3RpbmdtYW4iLCJpZCI6IjYwMzhjZDdhZDVhZTViMDRiMDRmMjE5YyIsImlhdCI6MTYxNDMzNTQ0MX0.xnVRf6TSy8QpiqRGGWUOZbkZAi1vWAm4RcKpnLZVX
+
+{
+    "title": "our growth as a nation",
+    "author": "abdulwahab abbas",
+    "url": "www.medicallife.com/7449"
+}
+
+#######
+POST http://localhost:3007/api/login
+Content-Type: application/json
+
+{
+    "username": "testingman",
+    "password": "humans"
+}
+
+######
+GET http://localhost:3007/api/blogs
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3RpbmdtYW4iLCJpZCI6IjYwMzhjZDdhZDVhZTViMDRiMDRmMjE5YyIsImlhdCI6MTYxNDMzNTQ0MX0.xnVRf6TSy8QpiqRGGWUOZbkZAi1vWAm4RcKpnLZVXTc
