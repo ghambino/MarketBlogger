@@ -18,8 +18,8 @@ userRouter.post('/', async (request, response, next) => {
     })
 
     try {
-        const savedlist = await user.save()
-        response.json(savedlist)
+        const savedUser = await user.save()
+        response.json(savedUser)
     }
      catch(error){
          next(error)
@@ -29,7 +29,7 @@ userRouter.post('/', async (request, response, next) => {
 userRouter.get('/', async(request, response, next) => {
     try{
         const returned = await User.find({}).populate('blogpost', {title: 1, likes: 1})
-        const processed = returned.map(blog => blog.toJSON())
+        const processed = returned.map(user => user.toJSON())
         response.json(processed)
     } 
     catch (error){

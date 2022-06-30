@@ -1,41 +1,54 @@
-const mongoose = require('mongoose');
-const uniqueValidator = require('mongoose-unique-validator')
+const mongoose = require("mongoose");
+const uniqueValidator = require("mongoose-unique-validator");
 
 const bloglistSchema = new mongoose.Schema({
-    title: {
+  title: {
+    type: String,
+    required: true,
+    uniqueCaseInsensitive: true,
+  },
+  bodyText: {
+    type: String,
+    required: true,
+    uniqueCaseInsensitive: true,
+  },
+  timeframe: {
+    type: String,
+    required: true,
+  },
+  likes: {
+    type: Number,
+  },
+  comment: [
+    {
+      content: {
         type: String,
         required: true,
-        unique: true,
-        minlength: 5,
-        uniqueCaseInsensitive: true
-    },
-    author: {
+        uniqueCaseInsensitive: true,
+      },
+      timeframe: {
         type: String,
-        required: true
-    },
-    url: {
-        type: String,
-        unique: true,
         required: true,
-    },
-    likes: {
+      },
+      likes: {
         type: Number,
-        required: true
+      },
     },
-    user: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'User'
-    }
+  ],
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
+  },
 });
 bloglistSchema.plugin(uniqueValidator);
 
 bloglistSchema.set("toJSON", {
-    transform: (document, returnedObject) => {
-        returnedObject.id = returnedObject._id.toString()
-        delete returnedObject._id
-        delete returnedObject.__v
-    }
+  transform: (document, returnedObject) => {
+    returnedObject.id = returnedObject._id.toString();
+    delete returnedObject._id;
+    delete returnedObject.__v;
+  },
 });
 
- const Bloglist = mongoose.model('Bloglist', bloglistSchema);
-module.exports = Bloglist
+const Bloglist = mongoose.model("Bloglist", bloglistSchema);
+module.exports = Bloglist;
